@@ -8,7 +8,7 @@ export default function Component() {
     return (
       
         <Layout>
-          <div>
+          <div className = 'text-blue-900 justify-between' >
             <h2>Hi, <b>{session?.user?.email}</b></h2>
             <div>
               <img src={session?.user?.image}></img>

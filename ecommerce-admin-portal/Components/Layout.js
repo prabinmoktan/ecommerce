@@ -1,13 +1,41 @@
 import React from 'react'
 import Nav from './Nav'
+import { signIn, useSession } from 'next-auth/react'
+// import products  from '@/pages/Products/products'
 
 
 const Layout = ({children}) => {
-  return (
-    <>
-        <Nav />
-    </>
-  )
-}
+  const {data: session}= useSession();
+  const signInHandler=(e)=> {
+    e.preventDefault();
+    // console.log(first)
+    signIn('google');
+
+  }
+  if (!session){
+    return (
+      <div className='bg-green-700'>
+        <button className='bg-black text-white' onClick={(event)=> signInHandler(event)}>
+          Sign in
+        </button>
+      </div>
+    )}
+    return(
+      <>
+        <div className= 'min-w-screen'>
+
+        <div  className= 'flex '>
+          <Nav />
+          <div className= 'flex-grow'>
+            {children}
+          </div>
+          
+        </div>
+        </div>
+      </>
+    )
+  }
+  
+  
 
 export default Layout

@@ -1,13 +1,20 @@
 import React from "react";
-import Logo from "./Logo";
+import Logo from "@/Components//Logo";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Nav = () => {
+  const inActiveLink = "gap-4 p-2 flex ";
+  const activeLink = "text-green-900 rounder-sm flex gap-2 p-2";
+  const { pathname } = useRouter();
+
   return (
-    <aside className="flex justify-between flex-row bg-warning">
-      <div>Logo</div>
-      <Link href={"/"}>
+    <aside className="flex flex-col gap-5  bg-slate-800 text-white p-5 w-50 ">
+      <div>
+        <Logo />
+      </div>
+      <Link href={"/"} className={pathname === "/" ? activeLink : inActiveLink}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -26,7 +33,10 @@ const Nav = () => {
         <span>Dashboard</span>
       </Link>
 
-      <Link href={"/products"}>
+      <Link
+        href={"/products"}
+        className={pathname === "/products" ? activeLink : inActiveLink}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -45,7 +55,10 @@ const Nav = () => {
         <span>products</span>
       </Link>
 
-      <Link href={"/order"}>
+      <Link
+        href={"/order"}
+        className={pathname === "/order" ? activeLink : inActiveLink}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -64,7 +77,37 @@ const Nav = () => {
         <span>Order</span>
       </Link>
 
-      <Link href={"/setting"}>
+      <Link
+        href="/category"
+        className={pathname === "/category" ? activeLink : inActiveLink}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"
+          />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 6h.008v.008H6V6z"
+          />
+        </svg>
+
+        <span>Category</span>
+      </Link>
+
+      <Link
+        href={"/setting"}
+        className={pathname === "/setting" ? activeLink : inActiveLink}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -80,10 +123,10 @@ const Nav = () => {
           />
         </svg>
 
-        <span>setting</span>
+        <span> Setting</span>
       </Link>
 
-      <Link href={"/"}>
+      <button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -98,9 +141,8 @@ const Nav = () => {
             d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
           />
         </svg>
-
-        <span>Log out</span>
-      </Link>
+        Log out
+      </button>
     </aside>
   );
 };
