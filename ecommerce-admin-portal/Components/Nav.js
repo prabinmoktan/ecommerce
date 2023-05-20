@@ -4,13 +4,14 @@ import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 
+
 const Nav = () => {
   const inActiveLink = "gap-4 p-2 flex ";
-  const activeLink = "text-green-900 rounder-sm flex gap-2 p-2";
+  const activeLink = " rounder-sm flex gap-2  text-xl ";
   const { pathname } = useRouter();
 
   return (
-    <aside className="flex flex-col gap-5  bg-slate-800 text-white p-5 w-50 ">
+    <aside className="flex flex-col gap-5 h-screen  bg-slate-800 text-white p-5  ">
       <div>
         <Logo />
       </div>
@@ -56,8 +57,8 @@ const Nav = () => {
       </Link>
 
       <Link
-        href={"/order"}
-        className={pathname === "/order" ? activeLink : inActiveLink}
+        href={"/orders"}
+        className={pathname === "/orders" ? activeLink : inActiveLink}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +127,7 @@ const Nav = () => {
         <span> Setting</span>
       </Link>
 
-      <button>
+      <button className='flex fixed bottom-7 bg-red-700 p-2  rounded-md' onClick={() =>signOut()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

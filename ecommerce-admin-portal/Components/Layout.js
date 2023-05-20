@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './Nav'
+// import NewProducts from '@/pages/Products/new'
 import { signIn, useSession } from 'next-auth/react'
 // import products  from '@/pages/Products/products'
 
@@ -22,7 +23,7 @@ const Layout = ({children}) => {
     )}
     return(
       <>
-        <div className= 'min-w-screen'>
+        <div className= 'h-full'>
 
         <div  className= 'flex '>
           <Nav />

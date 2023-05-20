@@ -4,7 +4,7 @@ import NextAuth, { getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 
 
-const adminEmails = [''];
+const adminEmails = ['prabinmoktan07@gmail.com'];
 
 export const authOptions = {
   // secret: process.env.SECRET,
