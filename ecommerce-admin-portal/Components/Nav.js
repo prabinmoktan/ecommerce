@@ -11,7 +11,7 @@ const Nav = () => {
   const { pathname } = useRouter();
 
   return (
-    <aside className="flex flex-col gap-5 h-screen  bg-slate-800 text-white p-5  ">
+    <aside className="flex flex-col gap-5 h-screen  bg-slate-800  text-white p-5  ">
       <div>
         <Logo />
       </div>

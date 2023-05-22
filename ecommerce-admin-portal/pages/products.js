@@ -10,9 +10,9 @@ const Products = () => {
     // },[])
     
   return (
-    <Layout>
-        <Link href='/products/new'>Add new</Link>
-            <table className = 'bg-blue-500 -5'>
+    <Layout >
+        <button className='bg-green-500 rounded-lg p-2 mx-20 my-10'><Link href='/products/new' className='mx-auto'>Add new</Link></button>
+            <table className = 'bg-blue-500 -5 w-3/6 mx-20 my-20 p-4'>
                 <thead > 
                     <tr >
                         <td>Product Name</td>

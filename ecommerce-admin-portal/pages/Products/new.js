@@ -12,13 +12,13 @@ const NewProducts = () => {
 
          </div>
         
-        <select className='bg-gray-700 '>
-          <option value="">Categorized</option>
+        <select className='mx-4'>
+          <option value="">Electronics</option>
           <option value="">Uncategorized</option>
         </select>
-
-        <label>Photos</label>
-        <label>
+          <br/>
+        <label className="mx-4">Photos</label>
+        <label className="mx-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -37,11 +37,14 @@ const NewProducts = () => {
           <input type="file" className="hidden" />
         </label>
 
-        <label>Product description</label>
-        <input type="text" placeholder="Product description" />
-
-        <label>Product price</label>
-        <input type="text" placeholder="Product price" />
+        <div className="my-10 mx-10">
+         <label>Product description</label>
+         <input type="text" placeholder="Product description" className="mx-10" />
+        </div>
+        <div className="my-10 mx-10" >
+          <label>Product price</label>
+          <input type="text" placeholder="Product price" className="mx-10"/>
+        </div>  
 
 
       </form>

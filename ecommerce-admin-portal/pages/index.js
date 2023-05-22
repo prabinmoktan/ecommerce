@@ -1,10 +1,16 @@
 import Layout from '@/Components/Layout';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import { useEffect } from 'react';
+import chart from 'chart.js'
+
 // import Nav from '../Components/Nav'
 // import '@globals.css'
 
 export default function Component() {
     const { data: session} = useSession();
+    
+
+    
     return (
       
         <Layout>
@@ -16,10 +22,10 @@ export default function Component() {
                 {session?.user?.email}
               </span>
             </div>
+          
           </div>
         </Layout>
       
     )
 
-}
-
+    }

@@ -23,7 +23,8 @@ const category = () => {
     e.preventDefault();
     const data = {
       name,
-      parentCategory,
+      parentCategory
+      ,
     };
     console.log(data);
 
@@ -49,6 +50,9 @@ const category = () => {
     setName(category.name);
     setParentCategory(category?.parent?._id);
   }
+  const deleteCategory= (category) => {
+
+  }
 
   return (
     <Layout>
@@ -62,7 +66,11 @@ const category = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <select value={parentCategory} onChange={(e) => setParentCategory(e.target.value)}>
-            <option>no parent category</option>
+            <option value=''>no parent category</option>
+            {categories.length>0 &&
+            categories.map((category)=> {
+              return <option key={category._id} value={category._id}> {category.name}</option>
+            })}
           </select>
 
           <button
