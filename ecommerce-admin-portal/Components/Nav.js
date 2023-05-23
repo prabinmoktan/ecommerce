@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 const Nav = () => {
   const inActiveLink = "gap-4 p-2 flex ";
-  const activeLink = " rounder-sm flex gap-2  text-xl ";
+  const activeLink = " rounder-sm flex gap-2  text-xl underline underline-offset-8";
   const { pathname } = useRouter();
 
   return (

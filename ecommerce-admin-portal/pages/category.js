@@ -8,6 +8,7 @@ const category = () => {
   const [parentCategory, setParentCategory] = useState("");
   const [categories, setCategories] = useState([]);
   const [editedCategory, setEditedCategory] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getCategories();
@@ -23,8 +24,7 @@ const category = () => {
     e.preventDefault();
     const data = {
       name,
-      parentCategory
-      ,
+      parentCategory,
     };
     console.log(data);
 
@@ -50,8 +50,10 @@ const category = () => {
     setName(category.name);
     setParentCategory(category?.parent?._id);
   }
-  const deleteCategory= (category) => {
-
+  const deleteCategory= async(category) => {
+    const { _id } = category;
+    await axios.delete('/api/categories?_id='+_id);
+    getCategories();
   }
 
   return (
